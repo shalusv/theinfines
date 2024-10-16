@@ -1,0 +1,48 @@
+/* src/pages/client/Home/Home.css */
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes at least full viewport height */
+    background-color: #f8f9fa; /* Light background color */
+    padding: 20px;
+  }
+  
+  .home-content {
+    text-align: center;
+    max-width: 800px; /* Maximum width for content */
+    background-color: #ffffff; /* White background for the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 40px; /* Inner padding */
+  }
+  
+  .home-content h2 {
+    font-size: 2.5rem; /* Heading size */
+    color: hsl(189.62deg, 96.36%, 21.57%); /* Use your specified color */
+    margin-bottom: 20px; /* Spacing below heading */
+  }
+  
+  .home-content p {
+    font-size: 1.2rem; /* Paragraph size */
+    color: #333; /* Dark text color */
+    margin-bottom: 30px; /* Spacing below paragraph */
+  }
+  
+  .home-btn {
+    display: inline-block; /* Make it a block for padding */
+    padding: 12px 24px; /* Padding for the button */
+    font-size: 1.2rem; /* Button text size */
+    color: #fff; /* Button text color */
+    background-color: hsl(12.63deg, 61.29%, 57.45%); /* Use your specified button color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .home-btn:hover {
+    background-color: hsl(12.63deg, 61.29%, 45%); /* Darker shade on hover */
+  }
+  

@@ -1,0 +1,63 @@
+/* src/components/client/common/widgets/Buttons/InfineButton.css */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+  text-decoration: none;
+}
+
+/* Link and Submit Buttons */
+.btn.link,
+.btn.submit {
+  background-color: hsl(12.63deg, 61.29%, 57.45%); /* Your color */
+  color: #fff;
+  padding: 10px 20px; /* Default padding */
+  border-radius: 25px; /* Oval shape */
+}
+
+.btn.link:hover,
+.btn.submit:hover {
+  background-color: hsl(12.63deg, 61.29%, 45%); /* Darker on hover */
+}
+
+/* Redirect Button */
+.btn.redirect {
+  width: 50px; /* Size of the circular button */
+  height: 50px; /* Ensure width and height are equal */
+  border-radius: 50%; /* Circular shape */
+  background-color: #ffffff; /* Background color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden; /* Ensures overflow is hidden */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the arrow */
+  text-decoration: none;
+}
+
+.btn.redirect:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Redirect button icon styling */
+.btn.redirect::after {
+  content: "→"; /* Arrow symbol */
+  font-size: 1.5rem; /* Arrow size */
+  color: hsl(12.63deg, 61.29%, 57.45%); /* Match color with the theme */
+}
+
+/* Size Modifiers */
+.btn.small {
+  font-size: 0.8rem;
+  padding: 5px 10px; /* Smaller padding */
+}
+
+.btn.large {
+  font-size: 1.2rem;
+  padding: 15px 30px; /* Larger padding */
+}

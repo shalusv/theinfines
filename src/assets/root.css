@@ -1,0 +1,57 @@
+/* src/assets/styles/root.css */
+
+/* Color Palette */
+:root {
+  --primary-color: hsl(12.63deg, 61.29%, 57.45%); /* Your primary color */
+  --primary-dark: hsl(12.63deg, 61.29%, 45%); /* Darker variant for hover */
+  --secondary-color: hsl(
+    189.62deg,
+    96.36%,
+    21.57%
+  ); /* Secondary color if needed */
+  --background-color: #ffffff; /* Background color */
+  --text-color: #333333; /* Default text color */
+  --link-color: var(--primary-color); /* Link color */
+  --link-hover-color: var(--primary-dark); /* Link hover color */
+}
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: "Roboto", sans-serif; /* Base font family */
+  font-size: 16px; /* Base font size */
+  line-height: 1.5; /* Line height */
+  color: var(--text-color); /* Default text color */
+  background-color: var(--background-color); /* Background color */
+}
+
+/* Global Link Styles */
+a {
+  color: var(--link-color); /* Link color */
+  text-decoration: none; /* No underline */
+}
+
+a:hover {
+  color: var(--link-hover-color); /* Link hover color */
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+/* Add other utility classes as needed */
