@@ -1,0 +1,16 @@
+/* src/assets/styles/style.css */
+
+/* Common page container for all pages */
+.header-conatainer {
+  /* padding: 20px; */
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes at least full viewport height */
+  background-color: #f8f9fa; /* Light background color */
+  padding: 0;
+}

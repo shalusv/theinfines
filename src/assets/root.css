@@ -2,17 +2,31 @@
 
 /* Color Palette */
 :root {
-  --primary-color: hsl(12.63deg, 61.29%, 57.45%); /* Your primary color */
-  --primary-dark: hsl(12.63deg, 61.29%, 45%); /* Darker variant for hover */
-  --secondary-color: hsl(
-    189.62deg,
-    96.36%,
-    21.57%
-  ); /* Secondary color if needed */
-  --background-color: #ffffff; /* Background color */
-  --text-color: #333333; /* Default text color */
-  --link-color: var(--primary-color); /* Link color */
-  --link-hover-color: var(--primary-dark); /* Link hover color */
+  --primary-color: #0f75bc;
+  --primary-color-dark: #067da9;
+  --secondary-color: #00aeef;
+  --secondary-color-dark: #0098cf;
+  --primary-color-rgb: 5, 117, 188;
+  --secondary-color-rgb: 0, 174, 239;
+
+  --shadow-dark: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-light: 0 4px 10px rgba(255, 255, 255, 0.1);
+  --shadow-primary: 0 4px 20px rgba(var(--primary-color-rgb), 0.1);
+
+  --bg-color-primary: var(--primary-color);
+  --bg-color-secondary: var(--secondary-color);
+  --bg-color: #fff;
+  --bg-link-color: var(--primary-color);
+  --bg-link-hover: var(--secondary-color);
+
+  --text-color: #333333;
+
+  --link-color-primary: var(--primary-color);
+  --link-color-secondary: var(--secondary-color);
+  --link-color: #fff;
+  --link-color-hover: var(--secondary-color);
+
+  --link-hover-color: var(--primary-color-dark);
 }
 
 /* Reset some default styles */

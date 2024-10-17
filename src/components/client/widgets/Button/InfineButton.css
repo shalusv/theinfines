@@ -41,14 +41,14 @@
 }
 
 .btn.redirect:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  transform: scale(1.5);
+  /* Slightly enlarge on hover */
 }
 
-/* Redirect button icon styling */
 .btn.redirect::after {
   content: "→"; /* Arrow symbol */
   font-size: 1.5rem; /* Arrow size */
-  color: hsl(12.63deg, 61.29%, 57.45%); /* Match color with the theme */
+  color: var(--primary-color); /* Match color with the theme */
 }
 
 /* Size Modifiers */
