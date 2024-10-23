@@ -1,6 +1,13 @@
-/* src/assets/styles/style.css */
-
-/* Common page container for all pages */
+:root {
+  /* header */
+  --header-container-padding: 10px;
+  --header-container-bg-color: transparent;
+  --header-container-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --header-padding: 10px;
+  --header-bg-color: #fff;
+  --header-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --header-border-radius: 10px;
+}
 .header-conatainer {
   /* padding: 20px; */
 }
@@ -13,4 +20,8 @@
   min-height: 100vh; /* Ensure it takes at least full viewport height */
   background-color: #f8f9fa; /* Light background color */
   padding: 0;
+}
+
+.page-container section:first-child {
+  padding: 10px;
 }
