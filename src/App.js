@@ -6,15 +6,14 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-// import Header from "./components/client/common/Header/Header"; // Header component
+import Header from "./components/client/common/Header/Header"; // Header component
 import Home from "./pages/client/Home/Home"; // Home page
 import About from "./pages/client/About/About";
 import Contact from "./pages/client/Contact/Contact";
 import Services from "./pages/client/Services/Services";
-import Tester from "./pages/Tester/Tester"; // Updated import to the new name
 import "./assets/root.css";
 import "./assets/styles/style.css";
-import DesignTester from "./components/client/common/DesignTester/DesignTester";
+import Footer from "./components/client/common/Footer/Footer";
 
 const App = () => {
   const location = useLocation();
@@ -23,17 +22,17 @@ const App = () => {
     <>
       {/* Render Header conditionally based on current route */}
       {/* {location.pathname !== "/design-tester" && <Header />} */}
-      <DesignTester />
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/design-tester" element={<Tester />} />{" "}
           {/* Updated to new component name */}
         </Routes>
       </main>
+      <Footer />
     </>
   );
 };

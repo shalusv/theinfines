@@ -1,10 +1,16 @@
-import React from "react";
-import { NavLink } from "react-router-dom"; // Import NavLink for routing
-import "./DesignTester.css"; // Ensure this path is correct
-import logo from "../../../../assets/images/client/basic/logo.png"; // Updated path to your logo
-import { FaHome } from "react-icons/fa";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./Header.css";
+import logo from "../../../../assets/images/client/basic/logo.png";
+import { FaHome, FaBars } from "react-icons/fa";
 
 const DesignTester = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="header-container">
       <header className="header">
@@ -13,13 +19,15 @@ const DesignTester = () => {
           <img src={logo} alt="Logo" className="logo" />
           <p className="tagline">solutions</p>
         </div>
-        <nav className="navbar">
+
+        <nav className={`navbar ${menuOpen ? "open" : ""}`}>
           <ul className="nav-links">
             <li>
               <NavLink
                 to="/"
-                className={({ isActive }) => (isActive ? "active-link" : "")}
-                exact // Add exact if you want it to match the exact path
+                className={({ isActive }) =>
+                  `${isActive ? "active-link" : ""} home`
+                }
               >
                 <FaHome />
               </NavLink>
@@ -45,11 +53,14 @@ const DesignTester = () => {
                 to="/contact"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
               >
-                Contact
+                Contacts
               </NavLink>
             </li>
           </ul>
         </nav>
+        <button className="menu-toggle" onClick={toggleMenu}>
+          <FaBars />
+        </button>
       </header>
     </div>
   );

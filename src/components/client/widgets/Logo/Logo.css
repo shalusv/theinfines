@@ -1,0 +1,69 @@
+.logo-inner-contaner {
+}
+.top-text {
+  font-size: 10px;
+  color: rgb(141, 141, 148);
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.logo {
+  width: 200px;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 300;
+  color: var(--secondary-color);
+  align-self: center;
+  margin-left: 10px;
+  position: relative;
+  top: -5px;
+  text-transform: uppercase;
+}
+
+/* ----------------------------------------------------------max-width 768px */
+/* Responsive styling for max-width 768px */
+@media (max-width: 768px) {
+  .logo-inner-contaner {
+  }
+  .logo {
+    width: 125px;
+  }
+
+  .top-text {
+    font-size: 10px;
+    color: rgb(141, 141, 148);
+    position: absolute;
+    top: 13px;
+    right: calc(50% + -75px);
+    letter-spacing: 3px;
+    font-weight: bold;
+  }
+}
+
+/* ----------------------------------------------------------max-width 575px */
+/* Responsive styling for max-width 575px */
+@media (max-width: 575px) {
+  .logo-inner-contaner {
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .top-text {
+    font-size: 10px;
+    color: rgb(141, 141, 148);
+    position: absolute;
+    top: 18px;
+    right: calc(50% + -75px);
+    letter-spacing: 3px;
+    font-weight: bold;
+  }
+}

@@ -8,12 +8,7 @@ const Home = () => {
     document.title = "Home | INFINES"; // Set the title for the Home page
   }, []);
 
-  return (
-    <div className="page-container">
-      <Hero title="" />
-      <Hero title="extra" />
-    </div>
-  );
+  return <div className="page-container">{/* <Hero title="Home" /> */}</div>;
 };
 
 export default Home;

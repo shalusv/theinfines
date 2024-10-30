@@ -5,9 +5,7 @@ import Hero from "../../../components/client/common/Hero/Hero";
 
 const Contact = () => {
   return (
-    <div className="page-container">
-      <Hero title="Contact Us" />
-    </div>
+    <div className="page-container">{/* <Hero title="Contact Us" /> */}</div>
   );
 };
 
