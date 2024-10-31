@@ -1,0 +1,2 @@
+Remvove Unwanted Comments
+regex = ;\s\/\*[\s\S]*?\*\/

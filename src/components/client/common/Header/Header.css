@@ -1,319 +1,386 @@
-/* src/components/client/common/DesignTester.css */
-
-.header-container {
-  padding: var(--header-container-padding);
-  background-color: var(--header-container-bg-color);
-  /* box-shadow: var(--header-container-shadow); */
-  position: fixed;
+/* Header container */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  position: fixed; /* Combine duplicate position declarations */
   top: 0;
   left: 0;
-  z-index: 1001;
-  width: 100%;
+  right: 0;
+  z-index: 1000;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--header-bg-color);
-  padding: var(--header-padding);
-  box-shadow: var(--header-shadow);
-  border-radius: var(--header-border-radius);
-  background-image: linear-gradient(
-    to right,
-    white 25%,
-    rgba(var(--primary-color-rgb), 1) 75%
-  );
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--nav-links-color);
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.logo-container {
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  border-radius: 25px;
-  row-gap: 0px;
-}
-
-.top-text {
-  font-size: 10px;
-  color: rgb(141, 141, 148);
-  position: absolute;
-  top: 20px;
-  right: 5px;
-  letter-spacing: 3px;
-  font-weight: bold;
-}
-
+/* Logo section */
 .logo {
-  width: 200px;
-  margin: 0;
-}
-
-.tagline {
-  font-size: 10px;
-  letter-spacing: 3px;
-  font-weight: 300;
-  color: var(--secondary-color);
-  align-self: center;
-  margin-left: 10px;
+  background-color: var(--logo-bg-color);
+  height: 100%;
+  flex-basis: 25%;
   position: relative;
-  top: -5px;
-  text-transform: uppercase;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar {
+.logo-image {
+  width: 80%; /* Adjust the height of the logo as needed */
+}
+
+/* Parallelogram effect using a pseudo-element */
+.logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 100%;
+  background-color: var(--logo-bg-color);
+  transform: skew(-30deg);
+  z-index: -1;
+}
+
+/* Navigation section */
+.navigation {
+  height: 100%;
+  flex: 1;
+  padding: var(--navbar-offset) 0;
+  position: relative;
+}
+
+/* Parallelogram effect using a pseudo-element */
+.navigation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 40px;
+  height: 100%;
+  background-color: var(--logo-bg-color);
+  transform: skew(-30deg);
+  z-index: 1;
+  box-shadow: var(--shadow-right);
+  border-bottom-right-radius: 10px;
+}
+
+.navigation-box {
+  background-color: var(--login-bg-color);
+  height: 100%;
   display: flex;
-  padding: 15px 30px;
-  border-radius: 10px;
-  flex-grow: 1;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 50px;
+  /* box-shadow: var(--shadow-navigation); */
+  padding-left: 80px;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
-  margin: 0;
-  padding: 0;
-  gap: 0px 25px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  gap: 0px 30px; /* Space between links */
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-color: bisque; */
+  /* background-color: aqua; */
+}
+.nav-links li {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 0px 30px; /* Space between links */
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-color: aqua; */
+  list-style-type: none;
+  /* padding-bottom: 10px; */
 }
 
-.nav-links li a {
+.nav-links li:has(a.home) {
+  width: auto;
+}
+
+/* Individual link styles */
+.nav-link {
   display: flex;
   align-items: center;
+  text-decoration: none; /* Remove underline */
+  color: var(--nav-links-color); /* Link color */
+  padding: 10px 15px; /* Add padding */
+  height: 100%; /* Ensure all links have the same height */
+  border-radius: 0px; /* Make Home button rounded */
+  transition: background-color 0.3s; /* Smooth transition */
+  box-shadow: var(--shadow-nav-link);
+  flex: 1;
   justify-content: center;
-  background-color: var(--nav-links-bg-color);
 }
 
-.nav-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--nav-links-bg-color);
-  color: var(--nav-links-color);
-  text-decoration: none;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  font-weight: 500;
-  box-shadow: var(--nav-links-shadow);
-  border-radius: var(--nav-links-br);
-}
-
-.nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--nav-links-color-hover);
-  transform: scale(1.1);
-  border: solid thin var(--nav-links-color-border-hover);
-}
-
-.nav-links a.active-link {
-  color: var(--nav-links-color-active);
-  /* box-shadow: var(--nav-links-shadow-active); */
-  /* border-top: solid thin var(--nav-links-color-border); */
-  transform: scale(1.03);
-  letter-spacing: 2px;
-}
-
-.nav-links li:first-child a {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+/* Home button specific style */
+.nav-link.home {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Fully rounded for Home button */
+  flex: none;
   padding: 10px;
+  font-size: 20px;
 }
 
-/* Hide menu toggle button by default */
-.menu-toggle {
-  display: none;
+/* Active link style */
+.nav-link.active-link {
+  letter-spacing: 0.1rem;
+  box-shadow: var(--shadow-nav-link-active);
+  color: var(--nav-link-color-active);
+  background-color: var(--bg-nav-link-active);
+  font-weight: 600;
+  transform: scale(1);
 }
 
-/* ----------------------------------------------------------max-width 768px */
-/* Responsive styling for max-width 768px */
+.nav-links li:has(a.active-link) {
+  border-bottom: 2px solid #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-links li:has(a.active-link.home) {
+  border: none;
+}
+
+/* Hover effect */
+.nav-link:hover {
+  transform: scale(1.05);
+  color: var(--nav-link-color-hover);
+}
+
+/* Login section */
+.login {
+  height: 100%;
+  flex-basis: 10%;
+  padding: var(--navbar-offset) 0;
+}
+
+.login-box {
+  background-color: var(--login-bg-color);
+  height: 100%;
+  flex-basis: 10%;
+  /* border-left: var(--border-seperator); */
+  box-shadow: var(--shadow-navigation);
+}
+
 @media (max-width: 768px) {
   .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: none;
-    max-height: 100px;
-  }
-
-  .logo {
-    width: 125px;
-  }
-
-  .top-text {
-    font-size: 10px;
-    color: rgb(141, 141, 148);
-    position: absolute;
-    top: 13px;
-    right: calc(50% + -75px);
-    letter-spacing: 3px;
-    font-weight: bold;
-  }
-
-  .navbar {
-    display: flex;
-    padding: 5px 20px;
-    border-radius: 10px;
-    justify-content: flex-end;
-    border-radius: 35px;
-    background-color: var(--primary-color);
-    width: 80%;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
-  }
-
-  .nav-links {
     width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-/* ----------------------------------------------------------max-width 575px */
-/* Responsive styling for max-width 575px */
-@media (max-width: 575px) {
-  .header-container {
-    padding: 0;
-  }
-  .header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    padding-top: 0;
-    gap: 10px;
-    background-color: var(--header-bg-color-small);
-    background-image: none;
-    position: relative;
-    z-index: 1001;
-    max-height: 130px;
-    border-radius: 0;
-  }
-
-  .logo-container {
-    align-items: center;
-    background-color: #ffffff;
-    z-index: 20001;
-    padding-top: 10px;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .logo {
-    width: 150px;
-  }
-
-  .top-text {
-    font-size: 10px;
-    color: rgb(141, 141, 148);
-    position: absolute;
-    top: 18px;
-    right: calc(50% + -75px);
-    letter-spacing: 3px;
-    font-weight: bold;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    max-height: 0; /* Initially collapsed */
-    overflow: hidden; /* Hide overflowing content */
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Smooth transition */
-    position: relative;
-    width: 60%;
-
+    height: 100px;
+    position: relative; /* Combine duplicate position declarations */
     z-index: 1000;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 
-  .navbar.open {
-    max-height: 250px; /* Expand to this height */
-    padding: 10px 0; /* Add padding when open */
-    overflow: visible;
-    background-color: var(--nav-bg-color-mobile);
-    top: 0px;
-    width: 70%;
+  .menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100002;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 50%;
+    color: var(--primary-color);
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 75px;
+    right: calc(50% - 25px);
+    transition: transform 0.4s ease;
+    transform: rotate(-45deg);
+    border: 0.3rem solid;
+
+    border-top-color: var(--primary-color);
+    border-right-color: var(--primary-color);
+  }
+  .menu-button svg {
+    transform: rotate(45deg); /* Slide down when menu is open */
+    transition: transform 0.5s ease;
+  }
+
+  .menu-button.open {
+    transform: translateX(215px) rotate(-45deg); /* Slide down when menu is open */
+    /* border: 0.3rem solid #fff;
+    border-left-color: var(--primary-color);
+    border-bottom-color: var(--primary-color); */
+  }
+  .menu-button.open svg {
+    transform: rotate(180deg); /* Slide down when menu is open */
+  }
+
+  /* Logo section */
+  .logo {
+    background-color: var(--logo-bg-color);
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    padding-top: 15px;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .logo-image {
+    width: 150px; /* Adjust the height of the logo as needed */
+  }
+
+  /* Parallelogram effect using a pseudo-element */
+  .logo::after {
+    display: none;
+  }
+
+  /* Navigation section */
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 50px;
+    padding: 0px;
+    flex-basis: 100%;
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    z-index: 10001;
+    overflow: hidden;
+    transition: width 0.5s ease-out, left 0.5s ease-out;
+  }
+
+  .navigation.open {
+    width: 100%;
+    left: 0; /* Adjust height based on the content */
+  }
+
+  /* Parallelogram effect using a pseudo-element */
+  .navigation::before {
+    display: none;
+  }
+
+  .navigation-box {
+    background-color: var(--login-bg-color);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 50px 0px 0px;
+    box-shadow: var(--shadow-navigation);
+    border-radius: 50px;
   }
 
   .nav-links {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
     width: 100%;
-    gap: 10px;
-    opacity: 1; /* Keep links visible */
-    transition: opacity 1s ease; /* Fade in links */
-    position: relative;
-    top: -30px;
+    height: 100%;
+    border-radius: 0px;
+    gap: 0px 30px; /* Space between links */
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: bisque; */
+    /* background-color: aqua; */
   }
-
   .nav-links li {
+    display: flex;
     width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .nav-links a {
-    padding: 12px 20px;
-    width: 90%; /* Make links wider */
-    text-align: center;
-    border-radius: 5px;
-    color: #fff;
-    background-color: var(--nav-links-bg-color);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-
-  .nav-links a:hover {
-    background-color: var(--nav-links-bg-color-hover);
-    color: white;
-  }
-
-  .nav-links a.active-link {
-    background-color: var(--nav-links-bg-color-hover);
-    box-shadow: 2px -4px 5px rgba(0, 171, 236, 0.4),
-      2px 4px 5px rgba(0, 171, 236, 0.4);
-    border-top: thin solid;
-  }
-
-  .nav-links a.active-link.home {
-    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.5);
-  }
-  .nav-links li:first-child a {
-    width: 50px;
-    height: 50px;
-    /* border: 1px solid white; */
-    box-shadow: 0 4px 9px #0000007a;
-  }
-
-  /* Menu toggle button */
-  .menu-toggle {
-    display: flex;
-    width: 50px;
-    height: 50px;
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    color: #fff;
+    height: 100%;
+    gap: 0px 30px; /* Space between links */
     align-items: center;
+    justify-content: space-evenly;
+    /* background-color: aqua; */
+    list-style-type: none;
+    /* padding-bottom: 10px; */
+  }
+
+  .nav-links li:has(a.home) {
+    width: auto;
+  }
+
+  /* Individual link styles */
+  .nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
+    color: var(--nav-links-color); /* Link color */
+    padding: 10px 15px; /* Add padding */
+    height: 100%; /* Ensure all links have the same height */
+    border-radius: 0px; /* Make Home button rounded */
+    transition: background-color 0.3s; /* Smooth transition */
+    box-shadow: var(--shadow-nav-link);
+    flex: 1;
     justify-content: center;
-    cursor: pointer;
-    /* box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3); */
-    transition: transform 0.3s ease;
-    /* margin-top: 10px; */
-    position: relative;
-    top: -10px;
-    z-index: 20002;
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Home button specific style */
+  .nav-link.home {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Fully rounded for Home button */
+    flex: none;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  /* Active link style */
+  .nav-link.active-link {
+    letter-spacing: 0.1rem;
+    box-shadow: var(--shadow-nav-link-active);
+    color: var(--nav-link-color-active);
+    background-color: var(--bg-nav-link-active);
+    font-weight: 600;
+    transform: scale(1);
+  }
+
+  .nav-links li:has(a.active-link) {
+    border-bottom: 2px solid #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .nav-links li:has(a.active-link.home) {
     border: none;
   }
 
-  .navbar.open + .menu-toggle {
-    top: -30px;
+  /* Hover effect */
+  .nav-link:hover {
+    transform: scale(1.05);
+    color: var(--nav-link-color-hover);
   }
 
-  .menu-toggle:hover {
-    transform: scale(1.01);
+  /* Login section */
+  .login {
+    height: 100%;
+    width: 80px;
+    padding: var(--navbar-offset) 0;
+    position: absolute;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+  }
+
+  .login-box {
+    background-color: var(--login-bg-color);
+    height: 100%;
+    flex-basis: 10%;
+    /* border-left: var(--border-seperator); */
+    box-shadow: var(--shadow-navigation);
   }
 }

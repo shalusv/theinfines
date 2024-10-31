@@ -1,32 +1,38 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Header.css";
-import logo from "../../../../assets/images/client/basic/logo.png";
 import { FaHome, FaBars } from "react-icons/fa";
+import logo from "../../../../assets/images/client/basic/logo.png";
+import "./Header.css";
 
-const DesignTester = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className="header-container">
-      <header className="header">
-        <div className="logo-container">
-          <div className="top-text">THE</div>
-          <img src={logo} alt="Logo" className="logo" />
-          <p className="tagline">solutions</p>
-        </div>
+    <header className="header">
+      <div className="logo">
+        <img src={logo} alt="Company Logo" className="logo-image" />
+      </div>
 
-        <nav className={`navbar ${menuOpen ? "open" : ""}`}>
+      {/* Menu button, visible on small screens */}
+      <button
+        className={`menu-button ${isMenuOpen ? "open" : ""}`}
+        onClick={toggleMenu}
+      >
+        <FaBars />
+      </button>
+
+      <div className={`navigation ${isMenuOpen ? "open" : ""}`}>
+        <div className="navigation-box">
           <ul className="nav-links">
             <li>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `${isActive ? "active-link" : ""} home`
+                  `nav-link home ${isActive ? "active-link" : ""}`
                 }
               >
                 <FaHome />
@@ -35,7 +41,9 @@ const DesignTester = () => {
             <li>
               <NavLink
                 to="/about"
-                className={({ isActive }) => (isActive ? "active-link" : "")}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active-link" : ""}`
+                }
               >
                 About
               </NavLink>
@@ -43,7 +51,9 @@ const DesignTester = () => {
             <li>
               <NavLink
                 to="/services"
-                className={({ isActive }) => (isActive ? "active-link" : "")}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active-link" : ""}`
+                }
               >
                 Services
               </NavLink>
@@ -51,19 +61,18 @@ const DesignTester = () => {
             <li>
               <NavLink
                 to="/contact"
-                className={({ isActive }) => (isActive ? "active-link" : "")}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active-link" : ""}`
+                }
               >
-                Contacts
+                Contact
               </NavLink>
             </li>
           </ul>
-        </nav>
-        <button className="menu-toggle" onClick={toggleMenu}>
-          <FaBars />
-        </button>
-      </header>
-    </div>
+        </div>
+      </div>
+    </header>
   );
 };
 
-export default DesignTester;
+export default Header;

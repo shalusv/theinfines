@@ -57,7 +57,7 @@ const Footer = () => {
           <div className="footer-column footer-logo">
             <div className="footer-logo-container">
               <div className="top-text">THE</div>
-              <img src={logo} alt="Logo" className="logo" />
+              <img src={logo} alt="Logo" className="footer-logo" />
               <p className="tagline">solutions</p>
             </div>
           </div>
