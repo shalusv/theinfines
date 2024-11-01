@@ -65,8 +65,8 @@
   );
 
   /* height */
-
-  --navigation-mobile-height: 285px;
+  --header-mobile-height: 110px;
+  --navigation-mobile-height: 320px;
 }
 
 body {
