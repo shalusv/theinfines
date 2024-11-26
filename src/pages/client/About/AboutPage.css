@@ -37,10 +37,6 @@
 }
 
 @media (max-width: 768px) {
-  .page-container {
-    padding: 1rem;
-  }
-
   .about-section {
     padding: 1rem;
   }
