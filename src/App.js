@@ -6,14 +6,15 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import Header from "./components/client/common/Header/Header"; // Header component
-import Home from "./pages/client/Home/Home"; // Home page
-import About from "./pages/client/About/About";
-import Contact from "./pages/client/Contact/Contact";
-import Services from "./pages/client/Services/Services";
 import "./assets/root.css";
 import "./assets/styles/style.css";
+
+import Header from "./components/client/common/Header/Header"; // Header component
 import Footer from "./components/client/common/Footer/Footer";
+import ServicesPage from "./pages/client/Services/ServicesPage";
+import HomePage from "./pages/client/Home/HomePage";
+import ContactPage from "./pages/client/Contact/ContactPage";
+import AboutPage from "./pages/client/About/AboutPage";
 
 const App = () => {
   const location = useLocation();
@@ -25,10 +26,10 @@ const App = () => {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/services" element={<ServicesPage />} />
           {/* Updated to new component name */}
         </Routes>
       </main>

@@ -207,6 +207,13 @@
     z-index: 1000;
     flex-wrap: wrap;
     align-items: flex-start;
+    background-image: url("../../../../assets/images/client/basic/bg-header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .logo {
+    background-color: var(--logo-bg-color-mobile);
   }
 
   .menu-button {
@@ -218,7 +225,7 @@
   }
 
   .menu-button.open {
-    transform: translateX(215px) rotate(-45deg); /* Slide down when menu is open */
+    transform: translateX(210px) rotate(-90deg); /* Slide down when menu is open */
     /* border: 0.3rem solid #fff;
     border-left-color: var(--primary-color);
     border-bottom-color: var(--primary-color); */
@@ -348,10 +355,11 @@
     border: 0.3rem solid;
     border-top-color: var(--primary-color);
     border-right-color: var(--primary-color);
+    top: 75px;
   }
 
   .menu-button.open {
-    transform: translateY(245px) rotate(-45deg); /* Slide down when menu is open */
+    transform: translateY(225px) rotate(-0deg); /* Slide down when menu is open */
     /* border: 0.3rem solid #fff;
     border-left-color: var(--primary-color);
     border-bottom-color: var(--primary-color); */
@@ -382,7 +390,7 @@
     padding: 0px;
     position: absolute;
     transition: height 0.3s ease-out;
-    top: 65px;
+    top: 55px;
     max-width: var(--navigation-mobile-width);
   }
 
@@ -402,7 +410,7 @@
 
   .nav-links {
     flex-direction: column;
-    border-radius: 0;
+    border-radius: 0 0 10px 10px;
     position: relative;
     padding: 0px 10px;
     gap: 0px;
@@ -410,6 +418,7 @@
     background-color: var(--primary-color);
     box-shadow: var(--shadow-navigation);
   }
+
   .nav-links li {
     position: relative;
     top: -30px;
@@ -435,13 +444,13 @@
   /* Home button specific style */
   .nav-link.home {
     background-color: var(--primary-color);
-    border: 3px solid white;
+    /* border: 3px solid white; */
     transform: scale(1.1);
   }
 
   /* Active link style */
   .nav-link.active-link.home {
-    border: 3px solid white;
+    /* border: 3px solid white; */
     transform: scale(1);
   }
 

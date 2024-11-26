@@ -10,6 +10,8 @@
   --header-bg-color: #fff;
   --header-bg-color-small: #fff;
   --logo-bg-color: #fff;
+  --logo-bg-color-mobile: rgba(0, 0, 0, 0.7);
+
   --navigation-bg-color: var(--primary-color);
   --nav-links-bg-color: var(--primary-color);
   --nav-links-bg-color-hover: var(--primary-color);
@@ -30,6 +32,10 @@
   --nav-link-color-border: rgb(1, 255, 2550);
   --nav-links-color-border-hover: none;
   --button-border-color: var(--primary-color);
+  --email-color: #ca320c;
+  --call-color: var(--secondary-color);
+  --whastsapp-color: #00d96d;
+  --insta-color: var(--primary-color);
 
   /* Border Sizes */
   --nav-links-br: 20px;
@@ -65,7 +71,7 @@
   );
 
   /* height */
-  --header-mobile-height: 110px;
+  --header-mobile-height: 100px;
   --navigation-mobile-height: 320px;
 }
 
@@ -75,15 +81,11 @@ body {
 .page-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100vh; /* Ensure it takes at least full viewport height */
-  background-color: #f8f9fa; /* Light background color */
-  background: linear-gradient(
-    75deg,
-    rgba(0, 212, 255, 1) 0%,
-    rgba(15, 117, 188, 1) 40%
-  );
+  /* background-color: #f8f9fa; Light background color */
+  background: var(--primary-color);
+  background-color: #fff;
 }
 .company-name {
   color: var(--primary-color);

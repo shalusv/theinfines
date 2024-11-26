@@ -9,6 +9,7 @@ import {
   FaFacebook,
   FaTwitter,
   FaSpinner,
+  FaWhatsapp,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
@@ -17,6 +18,13 @@ const Footer = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
+
+  const phoneNumber = "+919633898785"; // Replace with your WhatsApp number
+  const msg = "Hello, I need assistance!"; // Custom message (optional)
+
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    msg
+  )}`;
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -116,6 +124,16 @@ const Footer = () => {
                 <FaGlobe className="contact-icon" />
                 <span className="contact-text">www.theinfines.com</span>
               </NavLink>
+
+              <a
+                href={whatsappUrl}
+                className="contact-item"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp className="contact-icon" />
+                <span className="contact-text">Message us</span>
+              </a>
             </div>
           </div>
           {/* Quick Links */}

@@ -1,6 +1,6 @@
 .services-section {
   padding: 50px 20px;
-  background: #f9f9f9;
+  /* background: #f9f9f9; */
   text-align: center;
   width: 100%;
 }
@@ -35,13 +35,13 @@
 
 .service-icon {
   font-size: 2rem;
-  color: #025b6c;
+  color: var(--secondary-color);
   margin-bottom: 15px;
 }
 
 .service-title {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--primary-color);
   margin-bottom: 10px;
 }
 

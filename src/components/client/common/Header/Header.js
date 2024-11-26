@@ -1,14 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { FaHome, FaBars } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import logo from "../../../../assets/images/client/basic/logo.png";
+import { FiAlignCenter, FiArrowDown } from "react-icons/fi";
 import "./Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef(null);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const handleClickOutside = (event) => {
+    if (navRef.current && !navRef.current.contains(event.target)) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Close the menu when a link is clicked
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -17,15 +37,14 @@ const Header = () => {
         <img src={logo} alt="Company Logo" className="logo-image" />
       </div>
 
-      {/* Menu button, visible on small screens */}
       <button
         className={`menu-button ${isMenuOpen ? "open" : ""}`}
         onClick={toggleMenu}
       >
-        <FaBars />
+        {isMenuOpen ? <FiArrowDown /> : <FiAlignCenter />}
       </button>
 
-      <div className={`navigation ${isMenuOpen ? "open" : ""}`}>
+      <div className={`navigation ${isMenuOpen ? "open" : ""}`} ref={navRef}>
         <div className="navigation-box">
           <ul className="nav-links">
             <li>
@@ -34,6 +53,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   `nav-link home ${isActive ? "active-link" : ""}`
                 }
+                onClick={handleLinkClick} // Close menu on link click
               >
                 <FaHome />
               </NavLink>
@@ -44,6 +64,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active-link" : ""}`
                 }
+                onClick={handleLinkClick} // Close menu on link click
               >
                 About
               </NavLink>
@@ -54,6 +75,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active-link" : ""}`
                 }
+                onClick={handleLinkClick} // Close menu on link click
               >
                 Services
               </NavLink>
@@ -64,6 +86,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active-link" : ""}`
                 }
+                onClick={handleLinkClick} // Close menu on link click
               >
                 Contact
               </NavLink>
