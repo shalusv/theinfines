@@ -1,0 +1,42 @@
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0 30px; /* Added padding to create space for lines */
+}
+.section-title.odd h2 {
+  color: var(--primary-color);
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  width: 50px; /* Length of the line */
+  height: 2px; /* Thin line */
+  background-color: var(--primary-color);
+}
+
+.section-title.odd::before,
+.section-title.odd::after {
+  content: "";
+  width: 50px; /* Length of the line */
+  height: 2px; /* Thin line */
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 2rem;
+  }
+}

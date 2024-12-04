@@ -1,0 +1,489 @@
+/* Header container */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  position: fixed; /* Combine duplicate position declarations */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-dark);
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 100002;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 75px;
+  right: calc(50% - 25px);
+  transition: transform 0.4s ease;
+}
+
+.menu-button svg {
+  transform: rotate(45deg); /* Slide down when menu is open */
+  transition: transform 0.5s ease;
+}
+
+/* Logo section */
+.logo {
+  background-color: var(--logo-bg-color);
+  height: 100%;
+  flex-basis: 25%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  width: 150px; /* Adjust the height of the logo as needed */
+}
+
+/* Parallelogram effect using a pseudo-element */
+.logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 100%;
+  background-color: var(--logo-bg-color);
+  transform: skew(-30deg);
+  z-index: -1;
+}
+
+/* Navigation section */
+.navigation {
+  height: 100%;
+  flex: 1;
+  padding: var(--navbar-offset) 0;
+  position: relative;
+}
+
+/* Parallelogram effect using a pseudo-element */
+.navigation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 40px;
+  height: 100%;
+  background-color: var(--logo-bg-color);
+  transform: skew(-30deg);
+  z-index: 1;
+  box-shadow: var(--shadow-right);
+  border-bottom-right-radius: 10px;
+}
+
+.navigation-box {
+  background-color: var(--navigation-bg-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 50px;
+  /* box-shadow: var(--shadow-navigation); */
+  padding-left: 80px;
+}
+
+.nav-links {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  gap: 0px 30px; /* Space between links */
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-color: bisque; */
+  /* background-color: aqua; */
+}
+.nav-links li {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 0px 30px; /* Space between links */
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-color: aqua; */
+  list-style-type: none;
+  /* padding-bottom: 10px; */
+}
+
+.nav-links li:has(a.home) {
+  width: auto;
+}
+
+/* Individual link styles */
+.nav-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline */
+  color: var(--nav-links-color); /* Link color */
+  padding: 10px 15px; /* Add padding */
+  height: 100%; /* Ensure all links have the same height */
+  border-radius: 0px; /* Make Home button rounded */
+  transition: background-color 0.3s; /* Smooth transition */
+  box-shadow: var(--shadow-nav-link);
+  flex: 1;
+  justify-content: center;
+}
+
+/* Home button specific style */
+.nav-link.home {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Fully rounded for Home button */
+  flex: none;
+  padding: 10px;
+  font-size: 20px;
+}
+
+/* Active link style */
+.nav-link.active-link {
+  letter-spacing: 0.1rem;
+  box-shadow: var(--shadow-nav-link-active);
+  color: var(--nav-link-color-active);
+  background-color: var(--bg-nav-link-active);
+  font-weight: 600;
+  transform: scale(1);
+}
+
+.nav-links li:has(a.active-link) {
+  border-bottom: 2px solid #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-links li:has(a.active-link.home) {
+  border: none;
+}
+
+/* Hover effect */
+.nav-link:hover {
+  transform: scale(1.05);
+  color: var(--nav-link-color-hover);
+}
+
+/* Login section */
+.login {
+  height: 100%;
+  flex-basis: 10%;
+  padding: var(--navbar-offset) 0;
+}
+
+.login-box {
+  background-color: var(--navigation-bg-color);
+  height: 100%;
+  flex-basis: 10%;
+  /* border-left: var(--border-seperator); */
+  box-shadow: var(--shadow-navigation);
+}
+
+/* ------------------------------------------------------------ 768px  */
+
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+    display: flex;
+    height: 100px;
+    position: relative; /* Combine duplicate position declarations */
+    z-index: 1000;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-image: url("../../../../assets/images/client/basic/bg-header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .logo {
+    background-color: var(--logo-bg-color-mobile);
+  }
+
+  .menu-button {
+    display: flex;
+    transform: rotate(-45deg);
+    border: 0.3rem solid;
+    border-top-color: var(--primary-color);
+    border-right-color: var(--primary-color);
+  }
+
+  .menu-button.open {
+    transform: translateX(210px) rotate(-90deg); /* Slide down when menu is open */
+    /* border: 0.3rem solid #fff;
+    border-left-color: var(--primary-color);
+    border-bottom-color: var(--primary-color); */
+  }
+  .menu-button.open svg {
+    transform: rotate(180deg); /* Slide down when menu is open */
+  }
+
+  /* Logo section */
+  .logo {
+    padding-top: 15px;
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  .logo-image {
+    width: 150px; /* Adjust the height of the logo as needed */
+  }
+
+  /* Parallelogram effect using a pseudo-element */
+  .logo::after,
+  .navigation::before {
+    display: none;
+  }
+
+  /* Navigation section */
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 50px;
+    padding: 0px;
+    flex-basis: 100%;
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    z-index: 10001;
+    overflow: hidden;
+    transition: width 0.5s ease-out, left 0.5s ease-out;
+  }
+
+  .navigation.open {
+    width: 100%;
+    left: 0; /* Adjust height based on the content */
+  }
+
+  .navigation-box {
+    padding: 0px 50px 0px 0px;
+    box-shadow: var(--shadow-navigation);
+    border-radius: 50px;
+  }
+
+  .nav-links {
+    border-radius: 0px;
+  }
+  .nav-links li {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 0px 30px; /* Space between links */
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+    /* padding-bottom: 10px; */
+  }
+
+  .nav-links li {
+  }
+
+  .nav-links li:has(a.home) {
+    width: auto;
+  }
+
+  /* Individual link styles */
+  .nav-link {
+  }
+
+  /* Home button specific style */
+  .nav-link.home {
+  }
+
+  /* Active link style */
+  .nav-link.active-link {
+  }
+
+  .nav-links li:has(a.active-link) {
+    border-bottom: none;
+  }
+
+  .nav-links li:has(a.active-link.home) {
+    border: none;
+  }
+
+  /* Hover effect */
+  .nav-link:hover {
+    transform: scale(1.05);
+    color: var(--nav-link-color-hover);
+  }
+
+  /* Login section */
+  .login {
+    width: 80px;
+    flex: none;
+    position: absolute;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+  }
+
+  .login-box {
+  }
+}
+/* ------------------------------------------------------------ 575px  */
+@media (max-width: 575px) {
+  .header {
+    width: 100%;
+    display: flex;
+    height: var(--header-mobile-height);
+    position: relative;
+    align-items: flex-start;
+  }
+
+  .menu-button {
+    display: flex;
+    transform: rotate(-45deg);
+    border: 0.3rem solid;
+    border-top-color: var(--primary-color);
+    border-right-color: var(--primary-color);
+    top: 75px;
+  }
+
+  .menu-button.open {
+    transform: translateY(225px) rotate(-0deg); /* Slide down when menu is open */
+    /* border: 0.3rem solid #fff;
+    border-left-color: var(--primary-color);
+    border-bottom-color: var(--primary-color); */
+  }
+  .menu-button.open svg {
+    transform: rotate(180deg); /* Slide down when menu is open */
+  }
+  /* Logo section */
+  .logo {
+    padding-top: 15px;
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  .logo-image {
+    width: 150px; /* Adjust the height of the logo as needed */
+  }
+
+  /* Parallelogram effect using a pseudo-element */
+  .logo::after,
+  .navigation::before {
+    /* display: none; */
+  }
+
+  /* Navigation section */
+  .navigation {
+    height: 0;
+    padding: 0px;
+    position: absolute;
+    transition: height 0.3s ease-out;
+    top: 55px;
+    max-width: var(--navigation-mobile-width);
+  }
+
+  .navigation.open {
+    left: calc(50% - var(--navigation-mobile-left));
+    height: var(--navigation-mobile-height);
+  }
+
+  .navigation-box {
+    width: 100%;
+    padding: 45px 10px 10px 10px;
+    padding-bottom: 40px;
+    box-shadow: none;
+    border-radius: 0 0 10px 10px;
+    background-color: transparent;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    padding: 0px 10px;
+    gap: 0px;
+    padding-bottom: 25px;
+    background-color: var(--primary-color);
+    box-shadow: var(--shadow-navigation);
+  }
+
+  .nav-links li {
+    position: relative;
+    top: -30px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 0px 30px; /* Space between links */
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding: 5px 0;
+  }
+
+  .nav-links li:has(a.home) {
+    width: auto;
+  }
+
+  /* Individual link styles */
+  .nav-link {
+    transition: transform 0.3s ease-in;
+  }
+
+  /* Home button specific style */
+  .nav-link.home {
+    background-color: var(--primary-color);
+    /* border: 3px solid white; */
+    transform: scale(1.1);
+  }
+
+  /* Active link style */
+  .nav-link.active-link.home {
+    /* border: 3px solid white; */
+    transform: scale(1);
+  }
+
+  .nav-links li:has(a.active-link) {
+    border-bottom: none;
+  }
+
+  .nav-links li:has(a.active-link.home) {
+    border: none;
+  }
+
+  /* Hover effect */
+  .nav-link:hover {
+    transform: scale(0.9);
+    color: var(--nav-link-color-hover);
+  }
+
+  /* Login section */
+  .login {
+  }
+
+  .login-box {
+  }
+}
+
+/* ------------------------------------------------------------ 575px  */
+@media (max-width: 400px) {
+  /* Navigation section */
+  .navigation {
+    max-width: var(--navigation-mobile-width-small);
+  }
+
+  .navigation.open {
+    left: calc(50% - var(--navigation-mobile-left-small));
+  }
+}

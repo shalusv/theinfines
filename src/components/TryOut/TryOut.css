@@ -1,0 +1,141 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header container */
+.tryout-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo styling */
+.tryout-logo img {
+  width: 120px; /* Adjust as needed */
+}
+
+/* Toggle Button */
+.tryout-menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  z-index: 10;
+  display: none; /* Hidden by default */
+  transition: transform 0.3s ease; /* Smooth movement */
+}
+
+/* Navigation Links - Default */
+.tryout-nav-links {
+  display: flex;
+  gap: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  align-items: center;
+  justify-content: center; /* Center align the links */
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+}
+
+/* Link styling */
+.tryout-nav-links a {
+  color: #fff;
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth color transition */
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Link hover effect */
+.tryout-nav-links a:hover {
+  color: #025b6c; /* Change to green on hover */
+}
+
+/* Responsive Styling for <768px */
+@media (max-width: 768px) {
+  .tryout-header {
+    max-height: 100px;
+  }
+  .tryout-menu-toggle {
+    display: block;
+    background-color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 5px;
+  }
+
+  /* Collapse the navigation links by default */
+  .tryout-nav-links {
+    display: none; /* Hide links by default on small screens */
+    flex-direction: row; /* Align links in a row */
+    position: absolute; /* Positioning */
+    top: 70px; /* Adjust according to header height */
+    left: 50%; /* Start from center */
+    transform: translateX(-20%); /* Center horizontally */
+    z-index: 5; /* Ensure it's above other content */
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    padding: 5px 10px;
+  }
+
+  /* Display the nav links when the menu is open */
+  .tryout-nav-links.tryout-open {
+    display: flex; /* Show the links when open */
+    animation: slideIn 0.3s forwards; /* Animate on open */
+  }
+
+  /* Animation for the links */
+  @keyframes slideIn {
+    from {
+      opacity: 0; /* Start fully transparent */
+      transform: translateX(-50%); /* Start from the center */
+    }
+    to {
+      opacity: 1; /* Fully visible */
+      transform: translateX(-50%); /* Stay centered */
+      /* Slide effect */
+    }
+  }
+
+  /* Button slide down effect */
+  .tryout-menu-toggle.tryout-active {
+    transform: translateY(20px);
+  }
+
+  /* Show the links when the menu is open */
+  .tryout-nav-links.tryout-open a {
+    opacity: 1; /* Show links */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  }
+
+  .tryout-nav-links a {
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Hide links initially */
+    transform: translateY(-10px); /* Slide effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition effects */
+  }
+
+  /* Show the links when the menu is open */
+  .tryout-nav-links.tryout-open a {
+    opacity: 1; /* Show links */
+    transform: translateY(0); /* Reset translation */
+  }
+}

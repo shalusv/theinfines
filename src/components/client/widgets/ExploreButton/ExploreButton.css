@@ -1,0 +1,56 @@
+.explore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+}
+
+.explore-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.explore svg {
+  padding: 0px;
+  font-size: 3rem;
+  color: white;
+  width: 35px;
+}
+
+.explore svg:first-child {
+  padding-left: 10px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.explore svg:last-child {
+  padding-right: 10px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.explore-button .title {
+  width: 0;
+  opacity: 0;
+  text-transform: uppercase;
+  font-size: 1px;
+  transition: width 0.3s ease, font-size 0.3s ease, opacity 1s ease,
+    transform 1s ease;
+  color: #fff;
+}
+
+.explore-button:hover .title {
+  width: 110px;
+  opacity: 1;
+  font-size: 0.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+  transform: translateY(-10px);
+}
