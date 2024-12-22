@@ -1,0 +1,44 @@
+.friends-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.friends-table-container {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: var(--background-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.friends-table-container h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.friends-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.friends-table th,
+.friends-table td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.friends-table th {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.friends-table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+  .friends-table {
+    font-size: 0.9rem;
+  }
+}

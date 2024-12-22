@@ -1,0 +1,49 @@
+.form-container {
+  padding: 20px;
+}
+.form-container form {
+  padding: 20px;
+  box-shadow: var(--shadow-dark);
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+  font-size: 13px;
+  /* margin-bottom: 0.5rem; */
+  color: #ccc;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: var(--shadow-dark);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+.error-message {
+  color: red;
+  font-size: 10px;
+  margin-bottom: 10px;
+}

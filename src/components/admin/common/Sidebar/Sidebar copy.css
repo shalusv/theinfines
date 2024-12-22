@@ -1,0 +1,141 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #333;
+  padding: var(--pad-sidebar);
+  width: var(--w-sidebar);
+  height: 100vh;
+  transition: width 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar.collapsed {
+  width: var(--w-sidebar-mobile); /* Reduced width when collapsed */
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.menu-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.menu-item .link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  line-height: var(--fs-link);
+  text-transform: capitalize;
+}
+
+.menu-item:hover .link {
+  background-color: #555;
+}
+
+.menu-item .icon {
+  margin-right: 10px;
+  font-size: 20px;
+  transition: margin-right 0.3s ease;
+  width: var(--fs-link-icon);
+  height: var(--fs-link-icon);
+}
+
+.sidebar.collapsed .menu-item .icon {
+  margin-right: 0;
+}
+
+.sidebar.collapsed .menu-item .link {
+  padding-left: 10px;
+}
+
+/* Submenu styles */
+.submenu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 0;
+  left: calc(100%);
+  background-color: #444;
+  list-style-type: none;
+  padding: 10px;
+  width: var(--w-sidebar-submenu);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.submenu.visible {
+  display: block;
+  opacity: 1;
+}
+
+.submenu li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 10px;
+  display: block;
+}
+
+.submenu li a:hover {
+  background-color: #555;
+}
+
+/* Tooltip styles */
+.tooltip-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.tooltip-button {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.tooltip-button:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  visibility: visible;
+}
+
+.tooltip-button::after {
+  visibility: hidden;
+}
+
+/* Toggle Button for Sidebar */
+.toggle-btn {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
+
+.toggle-btn:hover {
+  background-color: #555;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover to Show Description</title>
+  <style>
+    .link-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .description {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      color: #fff;
+      padding: 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      font-size: 0.9em;
+      transition: visibility 0.3s, opacity 0.3s;
+    }
+
+    .link-container:hover .description {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="link-container">
+    <a href="https://example.com" target="_blank">Hover over me</a>
+    <div class="description">This is the description that appears when you hover!</div>
+  </div>
+</body>
+</html>

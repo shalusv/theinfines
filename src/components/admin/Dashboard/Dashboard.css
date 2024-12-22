@@ -1,0 +1,27 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--primary-color);
+}
+
+.dashboard-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - var(--h-header-dashboard));
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  margin-left: calc(0px - var(--w-sidebar-submenu));
+}
+
+.dashboard-content.collapsed {
+  margin-left: calc(
+    0px - var(--w-sidebar-submenu) - var(--w-sidebar-submenu-mobile)
+  );
+}

@@ -1,0 +1,16 @@
+/* DashboardHome.css */
+.dashboard-home {
+  padding: 20px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.dashboard-home h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.dashboard-home p {
+  font-size: 18px;
+  line-height: 1.6;
+}

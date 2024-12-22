@@ -23,79 +23,79 @@ const ContactPage = () => {
           </p>
         </div>
 
-        <div className="contact-section">
-          <h2 className="section-heading">Get in Touch</h2>
-          <p className="section-subheading">
-            Here are the ways you can reach us:
-          </p>
-          <ul className="contact-info">
-            <li className="email">
-              <BsEnvelope />
-              <a href="mailto:info@theinfines.com">info@theinfines.com</a>
-            </li>
-            <li className="call">
-              <FaPhone />
-              <a href="tel:+919633898785">+91 96338 98785</a>
-            </li>
-            <li className="whatsapp">
-              <BsWhatsapp />
-              <a
-                href="https://wa.me/+919633898785"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Whatsapp us
-              </a>
-            </li>
-          </ul>
-        </div>
+        <div className="contact-section contact-message">
+          <div className="getin-touch">
+            <h2 className="section-heading">Get in Touch</h2>
+            <p className="section-subheading">
+              Here are the ways you can reach us:
+            </p>
+            <ul className="contact-info">
+              <li className="email">
+                <BsEnvelope />
+                <a href="mailto:info@theinfines.com">info@theinfines.com</a>
+              </li>
+              <li className="call">
+                <FaPhone />
+                <a href="tel:+919633898785">+91 96338 98785</a>
+              </li>
+              <li className="whatsapp">
+                <BsWhatsapp />
+                <a
+                  href="https://wa.me/+919633898785"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Connect through Whatsapp
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="message-us">
+            <div className="contact-section">
+              <h3>Send Us a Message</h3>
+              <form className="contact-form">
+                {/* <img src={formImage} alt="form-Image" className="service-image" /> */}
+                <div className="form-fields">
+                  <div className="form-group">
+                    <label htmlFor="name"></label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
 
-        <div className="contact-section">
-          <h3>Send Us a Message</h3>
-          <p>
-            Fill out the form below and our team will get back to you promptly!
-          </p>
-          <form className="contact-form">
-            {/* <img src={formImage} alt="form-Image" className="service-image" /> */}
-            <div className="form-fields">
-              <div className="form-group">
-                <label htmlFor="name">Your Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
+                  <div className="form-group">
+                    <label htmlFor="email"></label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
 
-              <div className="form-group">
-                <label htmlFor="email">Your Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
+                  <div className="form-group">
+                    <label htmlFor="message"></label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      placeholder="Write your message"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
 
-              <div className="form-group">
-                <label htmlFor="message">Your Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  placeholder="Write your message"
-                  required
-                ></textarea>
-              </div>
+                <button type="submit" className="submit-button">
+                  Send Message
+                </button>
+              </form>
             </div>
-
-            <button type="submit" className="submit-button">
-              Send Message
-            </button>
-          </form>
+          </div>
         </div>
       </section>
     </div>

@@ -9,35 +9,54 @@ import {
 import "./assets/root.css";
 import "./assets/styles/style.css";
 
-import Header from "./components/client/common/Header/Header"; // Header component
+// Client Components
+import Header from "./components/client/common/Header/Header";
 import Footer from "./components/client/common/Footer/Footer";
-import ServicesPage from "./pages/client/Services/ServicesPage";
 import HomePage from "./pages/client/Home/HomePage";
-import ContactPage from "./pages/client/Contact/ContactPage";
 import AboutPage from "./pages/client/About/AboutPage";
+import ServicesPage from "./pages/client/Services/ServicesPage";
+import ContactPage from "./pages/client/Contact/ContactPage";
+import LoginPage from "./pages/client/LoginPage/LoginPage";
 import ScrollToTop from "./components/client/widgets/ScrollToTop/ScrollToTop";
-// import Friends from "./components/Friends/Friends";
+
+// Admin Components
+import Dashboard from "./components/admin/Dashboard/Dashboard";
+import ProtectedRoute from "./components/admin/common/ProtectedRoute/ProtectedRoute";
+
+// Admin Pages (content)
+import FriendsPage from "./pages/client/FriendsPage/FriendsPage";
 
 const App = () => {
   const location = useLocation();
 
   return (
     <>
-      {/* Render Header conditionally based on current route */}
-      {/* {location.pathname !== "/design-tester" && <Header />} */}
+      {/* Conditional Header/Footer rendering for client-side routes */}
+      {!location.pathname.startsWith("/admin") && <Header />}
       <ScrollToTop />
-      <Header />
       <main>
         <Routes>
+          {/* Client Routes */}
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          {/* <Route path="/friends" element={<Friends />} /> */}
-          {/* Updated to new component name */}
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/friends" element={<FriendsPage />} />{" "}
+          <Route path="/login" element={<LoginPage />} />{" "}
+          {/* Login page for client */}
+          {/* Admin Routes */}
+          <Route
+            path="/admin/*"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
-      <Footer />
+      {/* Only show Footer on client-side routes */}
+      {!location.pathname.startsWith("/admin") && <Footer />}
     </>
   );
 };
