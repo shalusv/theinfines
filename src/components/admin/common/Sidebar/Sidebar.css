@@ -72,7 +72,7 @@
   transition: display 0.5s ease;
 }
 
-.sidebar.collapsed .menu-item a .sidebar-link-text {
+.sidebar.collapsed .menu-item a > .sidebar-link-text {
   display: none;
 }
 
@@ -84,38 +84,81 @@
   transform: rotate(-90deg);
 }
 
-.submenu {
-  display: none;
-  background-color: #34495e;
-  padding-left: 20px;
-  position: absolute;
-  left: calc(100% + 6px);
-  height: auto;
-  top: 0;
-  width: var(--w-sidebar-submenu);
-  padding: 0px;
-  border-radius: 0px 5px 5px 0px;
+/* Highlight active menu item */
+.menu-item.active {
+  background-color: var(--sidebar-link-active-bg);
+  color: #1abc9c;
+}
+
+.menu-item.active > a {
+  color: var(--sidebar-link-active); /* Change text color for active link */
+}
+
+/* Optional: Adjust hover styles for better UX */
+.menu-item:hover {
+  background-color: var(--primary-color); /* Hover color for menu and submenu */
+}
+
+.menu-item:hover a {
+  color: var(--sidebar-link-hover);
 }
 
 .menu-item:hover .submenu {
   display: block; /* Show submenu when parent is hovered */
 }
 
+.submenu {
+  display: none;
+  background-color: #34495e;
+  padding-left: 20px;
+  position: absolute;
+  left: calc(100%);
+  height: auto;
+  top: -10px;
+  width: var(--w-sidebar-submenu);
+  padding: 10px 0px 10px 10px;
+  border-radius: 0px 10px 10px 0px;
+  list-style: none;
+  direction: rtl;
+}
+
 .submenu li {
   padding: 5px;
+  background-color: var(--sidebar-link-bg);
 }
 /* Remove bottom border for the last item */
+
 .submenu li:not(:last-child) {
   box-shadow: 0 0px 1px var(--border-color-li);
 }
 
 .submenu a {
   color: #ecf0f1;
-  padding: 5px;
+  padding: 10px;
 }
 
-.submenu a:hover {
-  background-color: #1abc9c;
+.sidebar.collapsed .submenu-item a {
+  justify-content: left;
+}
+
+.sidebar.collapsed .submenu-item a > .sidebar-link-text {
+  display: block;
+}
+
+.submenu-item.active {
+  background-color: var(--sidebar-link-active-bg);
+}
+
+.submenu-item.active a {
+  color: var(--primary-color);
+}
+
+.submenu-item:hover a {
+  color: var(--sidebar-link-hover);
+}
+
+.submenu-item:hover {
+  background-color: var(--primary-color); /* Hover color for menu and submenu */
 }
 
 .sidebar::-webkit-scrollbar {

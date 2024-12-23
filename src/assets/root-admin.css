@@ -2,7 +2,7 @@
 
 /* Color Palette */
 :root {
-  --primary-color: #34495e;
+  --admin-primary-color: #34495e;
   --border-color-li: #302e2e;
 
   --h-header-dashboard: 80px;
@@ -25,45 +25,16 @@
   /* padding */
   --pad-sidebar: 10px;
   --pad-sidebar-mobile: 10px;
-}
 
-/* Reset some default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  /* Color  */
 
-/* Body Styles */
-body {
-  font-family: "Roboto", sans-serif; /* Base font family */
-  font-size: 16px; /* Base font size */
-  line-height: 1.5; /* Line height */
-  color: var(--text-color); /* Default text color */
-  background-color: var(--background-color); /* Background color */
-}
+  --sidebar-link: #fff;
+  --sidebar-link-active: var(--primary-color);
+  --sidebar-link-hover: #c1c1c5;
 
-/* Global Link Styles */
-a {
-  color: var(--link-color); /* Link color */
-  text-decoration: none; /* No underline */
-}
+  /* background Color  */
 
-a:hover {
-  color: var(--link-hover-color); /* Link hover color */
+  --sidebar-link-bg: var(--admin-primary-color);
+  --sidebar-link-active-bg: #1a1919;
+  --sidebar-link-hover-bg: #c1c1c5;
 }
-
-/* Utility Classes */
-.text-center {
-  text-align: center;
-}
-
-.mb-1 {
-  margin-bottom: 1rem;
-}
-
-.mt-1 {
-  margin-top: 1rem;
-}
-
-/* Add other utility classes as needed */

@@ -1,0 +1,53 @@
+.notification-messages-page {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #2c3e50;
+  border-radius: 8px;
+  color: white;
+}
+
+.notification-messages-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.messages-list {
+  list-style: none;
+  padding: 0;
+}
+
+.message-item {
+  background-color: #34495e;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.message-item.unread {
+  border-left: 5px solid #1abc9c;
+}
+
+.message-item h3 {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
+}
+
+.message-item p {
+  margin: 0 0 10px;
+}
+
+.mark-read-button {
+  padding: 8px 15px;
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.mark-read-button:hover {
+  background-color: #16a085;
+}

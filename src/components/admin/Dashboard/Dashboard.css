@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: var(--primary-color);
+  background-color: var(--admin-primary-color);
 }
 
 .dashboard-body {

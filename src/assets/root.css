@@ -10,6 +10,7 @@
   --secondary-color-rgb: 0, 174, 239;
 
   --shadow-dark: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-dark-extra: 0 0px 10px rgba(0, 0, 0, 0.5);
   --shadow-light: 0 4px 10px rgba(255, 255, 255, 0.1);
   --shadow-primary: 0 4px 20px rgba(var(--primary-color-rgb), 0.1);
 
