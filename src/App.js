@@ -25,6 +25,7 @@ import ProtectedRoute from "./components/admin/common/ProtectedRoute/ProtectedRo
 
 // Admin Pages (content)
 import FriendsPage from "./pages/client/FriendsPage/FriendsPage";
+import UnsubscribePage from "./pages/client/UnsubscribePage/UnsubscribePage";
 
 const App = () => {
   const location = useLocation();
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/friends" element={<FriendsPage />} />{" "}
+          <Route path="/unsubscribe" element={<UnsubscribePage />} />{" "}
           <Route path="/login" element={<LoginPage />} />{" "}
           {/* Login page for client */}
           {/* Admin Routes */}

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import config from "../../../../config/config";
 import logo from "../../../../assets/images/client/basic/logo.png";
 import "./Footer.css";
 import {
@@ -13,6 +15,12 @@ import {
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
+// case 1:  Subscribed
+// case 2:  Email already subscribed.
+// case 3:  Subscription reactivated successfully.
+// case 4:  $subscribed.'Failed to send email.
+// case 5:  Failed to subscribe.Try again later
+// case 6:  Subscribed
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,19 +50,57 @@ const Footer = () => {
     }
 
     setIsSubmitting(true);
-    setMessage("");
+    setMessage(""); // Clear previous message
 
-    setTimeout(() => {
+    try {
+      const response = await axios.post(`${config.API_URL}/subscribe`, {
+        sender_email: email,
+      });
+
+      const { status, message } = response.data;
+
+      switch (status) {
+        case 1: // Subscribed successfully
+          setMessageType("success");
+          setMessage("Subscribed successfully!");
+          setEmail("");
+          break;
+        case 2: // Already subscribed
+          setMessageType("warning");
+          setMessage("You're already subscribed.");
+          setEmail("");
+          break;
+        case 3: // Reactivated
+          setMessageType("success");
+          setMessage("Subscription reactivated successfully!");
+          setEmail("");
+          break;
+        case 4: // Subscribed after reactivation
+          setMessageType("success");
+          setMessage("Subscription reactivated.");
+          setEmail("");
+          break;
+        case 5: // Subscription failed
+          setMessageType("error");
+          setMessage("Failed to subscribe. Try again later.");
+          break;
+        case 0:
+        default: // Invalid email or unknown error
+          setMessageType("error");
+          setMessage(message || "Something went wrong.");
+          break;
+      }
+    } catch (error) {
+      setMessageType("error");
+      if (error.response && error.response.status === 422) {
+        setMessage("Invalid email address or validation error.");
+      } else {
+        setMessage("Failed to subscribe. Please try again later.");
+      }
+    } finally {
       setIsSubmitting(false);
-      setMessageType("success");
-      setMessage("Subscribed successfully!");
-      setEmail("");
-
-      // Clear the success message after 4 seconds
-      setTimeout(() => {
-        setMessage("");
-      }, 4000);
-    }, 2000);
+      setTimeout(() => setMessage(""), 4000); // Clear the message after 4 seconds
+    }
   };
 
   return (
@@ -151,6 +197,9 @@ const Footer = () => {
               </NavLink>
               <NavLink to="/careers" className="contact-item">
                 <span className="contact-text">Careers</span>
+              </NavLink>
+              <NavLink to="/unsubscribe" className="contact-item">
+                <span className="contact-text">Unsubscribe</span>
               </NavLink>
             </div>
           </div>

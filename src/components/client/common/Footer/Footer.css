@@ -208,7 +208,9 @@
 .message.success {
   color: #06ff06;
 }
-
+.message.warning {
+  color: #ff9b06;
+}
 /* Spinning animation */
 @keyframes spin {
   0% {

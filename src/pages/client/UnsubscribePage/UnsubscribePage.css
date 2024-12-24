@@ -1,0 +1,103 @@
+.unsubscribe-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.unsubscribe-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem;
+  background: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.unsubscribe-section h2,
+.unsubscribe-section h3 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.unsubscribe-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.unsubscribe-form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.unsubscribe-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.unsubscribe-form .form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.unsubscribe-form label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.unsubscribe-form input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.unsubscribe-form input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.submit-button {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .unsubscribe-content {
+    padding: 1rem;
+  }
+
+  .unsubscribe-form input {
+    font-size: 1rem;
+  }
+
+  .submit-button {
+    padding: 0.6rem 1.8rem;
+  }
+}

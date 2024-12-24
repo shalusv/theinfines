@@ -1,5 +1,7 @@
 import React from "react";
 import "./HeaderDash.css";
+import { Link } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
 
 const HeaderDashboard = ({ toggleSidebar, isOpen }) => {
   return (
@@ -11,6 +13,9 @@ const HeaderDashboard = ({ toggleSidebar, isOpen }) => {
       <div className="header-actions">
         <button className="header-btn">Profile</button>
         <button className="header-btn">Logout</button>
+        <Link to="/" className="rounded-link-button">
+          <FaHome></FaHome>
+        </Link>
       </div>
     </header>
   );
